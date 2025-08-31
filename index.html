@@ -37,6 +37,60 @@
       font-size:14px;
       border-radius:8px;
     }
+
+    /* PDF Export 최적화 */
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 13px;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .wrap {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      header, section {
+        box-shadow: none;
+        background: #fff;
+      }
+
+      section {
+        margin-bottom: 16px;
+        padding: 16px;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      h1 { font-size: 24px; margin-bottom: 6px; }
+      h2 { font-size: 18px; }
+      h3 { font-size: 15px; }
+
+      ul { padding-left: 18px; margin: 6px 0; }
+      li { margin: 4px 0; page-break-inside: avoid; break-inside: avoid; }
+
+      .projects .project-detail {
+        font-size: 13px;
+        padding: 8px 10px;
+        border-left-width: 2px;
+        background: #fff;
+      }
+
+      .profile-info img {
+        width: 80px; height: 80px;
+      }
+
+      .download-btn { display: none; }
+      a { text-decoration: none; color: #111; }
+    }
   </style>
 </head>
 <body>
