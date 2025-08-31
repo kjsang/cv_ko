@@ -4,12 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>김주상 | CV</title>
-  <!-- Favicon (PNG direct link) -->
   <link rel="icon" type="image/png" href="https://favicon.io/emoji-favicons/speech-balloon/32.png">
   <link rel="apple-touch-icon" href="https://favicon.io/emoji-favicons/speech-balloon/180.png">
 
   <style>
-    /* ===== Screen Styles ===== */
     body {font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,Noto Sans KR,sans-serif; line-height:1.6; margin:0; background:#f9fafb; color:#111827;}
     .wrap {max-width: 1000px; margin: 0 auto; padding: 32px;}
     header {
@@ -36,7 +34,6 @@
     .skills-list, .certs-list, .langs-list {display:flex; flex-wrap:wrap; gap:10px;}
     .pill {background:#f3f4f6; border-radius:999px; padding:6px 12px; font-size:13px; border:1px solid #e5e7eb;}
 
-    /* Projects detail styling */
     .projects ul li { margin: 10px 0; }
     .projects .project-detail{
       margin: 6px 0 0;
@@ -48,72 +45,60 @@
       border-radius:8px;
     }
 
-    /* ===== Print: HARD MODE for A4 1–2 pages ===== */
+    /* ==== 경력 구분선 스타일 ==== */
+    .experience h3 {
+      position: relative;
+      padding-top: 14px;
+      margin-top: 18px;
+    }
+    .experience h3:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .experience h3:not(:first-of-type)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    /* PDF Export 최적화 */
     @media print {
       @page { size: A4; margin: 10mm; }
-
-      body {
-        background:#fff; font-size:12px; line-height:1.35;
-        -webkit-print-color-adjust: exact; print-color-adjust: exact;
-      }
-
+      body { background:#fff; font-size:12px; line-height:1.35;
+             -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .wrap { max-width:100%; padding:0; }
-
-      /* Remove shadows and backgrounds for clean print */
       header, section { box-shadow:none; background:#fff; }
-
-      /* Keep header & sections together; avoid cuts */
-      header, section, li {
-        page-break-inside: avoid;
-        break-inside: avoid;
-        -webkit-column-break-inside: avoid;
-        -webkit-region-break-inside: avoid;
-      }
-
-      /* Tighten spacing & padding */
+      header, section, li { page-break-inside: avoid; break-inside: avoid; }
       header { padding:12px 12px 10px; margin-bottom:12px; }
-      .update-info { top:6px; left:10px; font-size:11px; }
+      .update-info { position: static !important; display:block; margin-bottom:4px; font-size:11px; color:#6b7280; }
       section { margin-bottom:12px; padding:12px; }
-
       h1 { font-size:22px; margin:0 0 4px; }
       h2 { font-size:16px; margin:0 0 8px; padding-bottom:4px; border-bottom-width:1px; }
       h3 { font-size:14px; }
-
       .meta { font-size:12px; margin:2px 0 6px; color:#6b7280; }
-
       ul { padding-left:16px; margin:4px 0; }
       li { margin:2px 0; }
-
       .skills-list, .certs-list, .langs-list { gap:6px; }
       .pill { padding:5px 10px; font-size:12px; }
-
-      .projects .project-detail {
-        font-size:12px; padding:6px 8px; border-left-width:2px; background:#fff; border-radius:6px;
-      }
-
+      .projects .project-detail { font-size:12px; padding:6px 8px; border-left-width:2px; background:#fff; border-radius:6px; }
       .profile-info img { width:70px; height:70px; }
-
       .download-btn { display:none; }
       a { text-decoration:none; color:#111; }
+      .experience h3:not(:first-of-type)::before { background:#d1d5db; } /* 인쇄 시 라인 진하게 */
     }
-      .update-info {
-    position: static !important;
-    display: block;
-    margin-bottom: 4px;
-    font-size: 11px;
-    color: #6b7280;
-  }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header>
-      <div class="update-info">마지막 업데이트: 2025-08</div>
       <div class="profile-info">
-        <img
-          src="https://media.licdn.com/dms/image/v2/D5603AQH9cJ_XEarspg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1711578068176?e=1759363200&v=beta&t=LNVOUk3u0SHKfIeZ7jjbWlkrbnWD-hdMYjzD2b1d1BQ"
-          alt="Profile Photo" loading="lazy" decoding="async" />
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQH9cJ_XEarspg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1711578068176?e=1759363200&v=beta&t=LNVOUk3u0SHKfIeZ7jjbWlkrbnWD-hdMYjzD2b1d1BQ"
+             alt="Profile Photo" loading="lazy" decoding="async" />
         <div>
           <h1>김주상 Jusang Kim</h1>
           <p>Consultant @ JIPYONG LLC | Regulatory Policy · ESG · Compliance</p>
@@ -121,10 +106,11 @@
       </div>
       <div>
         <p>
+          마지막 업데이트: 2025-08<br/>
           📧 vouloir12@gmail.com<br/>
           🔗 <a href="https://www.linkedin.com/in/kjsang/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kjsang</a> |
           <a href="https://velog.io/@jusangs" target="_blank" rel="noopener noreferrer">velog.io/@jusangs</a><br/>
-          🎂 1993년 04월 13일<br/>
+          🎂 1993.04.13<br/>
           📍 서울, 대한민국
         </p>
         <a href="#" class="download-btn" onclick="window.print()">📄 PDF로 다운로드받기</a>
@@ -136,7 +122,8 @@
       <p>컴플라이언스, 규제정책, ESG 분야에서 전문성을 가진 컨설턴트. 법무법인 지평 ESG센터에서 대기업 대상 지속가능성 실사, 인권 및 규제정책 리서치를 수행하고 있으며, 이전에는 ESG 분석·보고, 공공투자 관련 연구를 수행했습니다. 정책학 석사 과정에서는 이해충돌방지법, 플랫폼 규제, 빅데이터 기반 정책결정 분석 연구를 통해 학술 논문을 발표했습니다.</p>
     </section>
 
-    <section>
+    <!-- 경력 섹션에 class="experience" 추가 -->
+    <section class="experience">
       <h2>경력 Experience</h2>
       <h3>법무법인(유한) 지평 · ESG센터 / 컨설턴트</h3>
       <p class="meta">2024.04 – 현재 | 서울 중구</p>
@@ -173,7 +160,7 @@
         <li>교학행정 업무 지원 및 입시 관련 업무 담당</li>
         <li><strong>2019년 원격 대학원 자체평가 프로젝트</strong> – 교육부 사이버 대학원 자체평가 보고서 작성 실무 담당 (2019.09~2019.12)</li>
       </ul>
-    </section>
+    </section> 
 
     <section>
       <h2>학력 Education</h2>
